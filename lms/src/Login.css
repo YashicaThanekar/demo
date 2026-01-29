@@ -1,22 +1,41 @@
 .login-container
 {
-  display: flex;
+  display:flex;
   justify-content: center;
   background-color: white;
   height: fit-content;
   padding: 10px 50px 40px 50px;
   width: fit-content;
   justify-self: center;
-  margin-top: 12rem;
+  margin-top: 5rem;
   box-shadow: 2px 2px 250px 0px rgba(212, 176, 111, 0.25);
-  
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 90%;          
+  max-width: 400px;   
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid #643131; 
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h3
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+.login-container h3
 {
   display: flex;
   justify-content: center;
   font-size: 40px;
+}
+
+h6{
+  justify-content: end;
+  color:rgb(207, 204, 216)
 }
 
 .login-button
@@ -30,13 +49,16 @@ h3
   height: 35px;
   width:320px;
   border: none;
-  
+  font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
   margin-top: 10px;
+  width: 100%;         
+  max-width: 100%;
+  box-sizing: border-box;
 
 }
 
-/* input
+input
 {
   width:300px;
   height: 30px;
@@ -44,9 +66,81 @@ h3
   background-color: #FFFBF2;
   padding: 2px 0px 2px 15px;
   margin-top: 5px;
-} */
+}
 
 body
 {
   background-color: #fffbf2;
+}
+
+.navbar-style{
+  background-color: #63A088;
+  padding:10px 20px;
+  text-align: center;
+  color:black;
+  display: flex;
+}
+
+.navbar-content {
+  display:flex;         
+  /* flex-direction: row;     */
+   align-items: center;     
+  gap: 65px;             
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  line-height:1.2em;
+}
+
+.navbar-text h1{
+  display: flex;
+  margin:0;
+  line-height: 1.2;
+  flex-direction: column; 
+  align-items: flex-start; 
+  text-align: center;
+}
+.navbar-text h5{
+  margin: 4px 0 0 0;        
+  margin-bottom: 0;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  color:#1f5183;
+}
+
+.navbar-logo{
+  height:80px;
+  margin-left:30px;
+}
+img{
+  height:100px;
+  margin-right: auto;
+}
+
+.fa-user {
+  margin-right: 8px; 
+  color: #003366;  
+}
+
+.login-button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #4e806c;
+  transform: translateY(-2px); 
+}
+
+.login-button:active {
+  transform: translateY(0); 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container {
+  animation: fadeIn 0.8s ease-out;
 }

@@ -21,13 +21,21 @@ nav{
     color:white;
     align-items: center;
     width:100vw;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav h1{
+  margin-right:50rem;
 }
 
 nav img{
     max-width:7rem;
     height: auto;
-    margin-left:3rem;
-    padding:0 1rem 0 0 ;
+    margin-left:10rem;
+    padding:0 0 0 0 ;
 }
 
 .search-bar{
@@ -64,6 +72,11 @@ input::placeholder {
     margin: 1.5rem 0;
     border-left: none;
     cursor:pointer;
+}
+
+.filter-button img{
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 input.search-bar:focus, input.search-bar:focus-visible {
