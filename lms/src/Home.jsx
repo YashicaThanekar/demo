@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "./Home.css";
-
+import books from "./components/Booklist";
+import BookDetailCard from "./components/BookDetailCard";
 
 const Home = () => {
+  const [selectedBook, setSelectedBook] = useState(null);
+
   return (
     <div>
       {/* <div className="home-container">
@@ -30,15 +33,47 @@ const Home = () => {
          </div>
       </div> */}
       <nav>
-        <img className="logo-image" src="/assets/apsit.png" alt="Library Logo" />
+        <img
+          className="logo-image"
+          src="/assets/apsit.png"
+          alt="Library Logo"
+        />
         <h1>PCT's A. P. Shah Institute of Technology</h1>
       </nav>
       <div className="search-filter-container">
-      <input type="text" className="search-bar" placeholder="Search for books..." />
-      <button className="filter-button"><img src="/assets/filter-icon.png" alt="Filter" /></button>
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search for books..."
+        />
+        <button className="filter-button">
+          <img src="/assets/filter-icon.png" alt="Filter" />
+        </button>
       </div>
+
+      <div className="book-grid">
+        {books.map((book) => (
+          <div
+            className="book-card"
+            key={book.id}
+            onClick={() => setSelectedBook(book)}
+          >
+            <img src={book.image} alt={book.title} className="book-image" />
+            <h4>{book.title}</h4>
+            <span className={`book-status ${book.status.toLowerCase()}`}>
+              {book.status}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {selectedBook && (
+        <BookDetailCard
+          book={selectedBook}
+          onClose={() => setSelectedBook(null)}
+        />
+      )}
     </div>
-    
   );
 };
 
