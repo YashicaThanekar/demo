@@ -1,0 +1,124 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+}
+/* 
+.home-container {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),url("./assets/hero.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    position:static;
+    margin-top: -50px;
+    color: white;
+}
+
+.home-container h2 {
+    font-size: 3em;
+    text-align: center;
+    padding: 0;
+    text-shadow: 2px 2px 4px #000000;
+}
+.home-container p
+{
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -20px;
+    
+}
+
+.logo-image {
+    background-image: url("./assets/apsit.png");
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 50px auto;
+    padding:60px 0px 0px 0px;
+}
+
+.home-container button {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #00757e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.home-container button:hover {
+    background-color: #00757e;
+    border: 2px solid #fff;
+}
+
+.all-books h2 {
+    
+    margin: 2rem 0 0 12rem;
+    font-size: 40px;
+}
+
+.book-grid {
+    background-color: red;
+    width:20%;
+    height:20rem;
+} */
+
+nav{
+    display: flex;
+    background-color: #63A088;
+    color:white;
+    align-items: center;
+    width:100vw;
+}
+
+nav img{
+    max-width:7rem;
+    height: auto;
+    margin-left:3rem;
+    padding:0 1rem 0 0 ;
+}
+
+.search-bar{
+    display:flex;
+    justify-self: center;
+    min-width: 50%;
+    margin: 1.5rem 0;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 2.5rem;
+    border: 2px solid #F6E7CB;
+  background-color: #FFFBF2;
+}
+
+.search-bar input{
+    padding: 2px;
+}
+
+.filter-button{
+     border: 2px solid #F6E7CB;
+  background-color: #FFFBF2;
+    height:2.8rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 1.5rem 0;
+    border-left: none;
+    cursor:pointer
+}
+
+.search-filter-container{
+    display: flex;
+    justify-content: center;
+    
+}
+
