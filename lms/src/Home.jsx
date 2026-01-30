@@ -25,29 +25,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <div className="home-container">
-        <div className="logo">
-          <img
-            className="logo-image"
-            src="/assets/apsit.png"
-            alt="Library Logo"
-          />
-        </div>
-        <h2>Library Management System</h2>
-        <p>An intelligent library management system with book recommendation</p>
-
-        <button>More Info</button>
-      </div>
-      <div className="all-books">
-      <h2>All Books</h2>
-      <div className="books-list">
-        
-         <div className="book-grid">
-          <h3>Book Title 1</h3>
-          <p>Author: Author Name 1</p>
-        </div>
-         </div>
-      </div> */}
       <nav>
         <img
           className="logo-image"
