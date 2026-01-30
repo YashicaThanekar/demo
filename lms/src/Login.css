@@ -46,8 +46,7 @@ h6{
   justify-self: center;
   justify-content: center;
   align-items: center;
-  height: 35px;
-  width:320px;
+  height: 45px;
   border: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -55,17 +54,20 @@ h6{
   width: 100%;         
   max-width: 100%;
   box-sizing: border-box;
-
+  border-radius: 6px;
 }
 
 input
 {
-  width:300px;
-  height: 30px;
+  width: 100%;
+  height: 40px;
   border: 2px solid #F6E7CB;
   background-color: #FFFBF2;
   padding: 2px 0px 2px 15px;
   margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 body
@@ -90,7 +92,7 @@ body
   text-align: center;
   line-height:1.2em;
 }
-
+/* 
 .navbar-text h1{
   display: flex;
   margin:0;
@@ -98,7 +100,10 @@ body
   flex-direction: column; 
   align-items: flex-start; 
   text-align: center;
-}
+} */
+
+
+
 .navbar-text h5{
   margin: 4px 0 0 0;        
   margin-bottom: 0;
@@ -112,9 +117,31 @@ body
   height:80px;
   margin-left:30px;
 }
-img{
-  height:100px;
-  margin-right: auto;
+
+nav {
+  display: flex;
+  background-color: #63A088;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  margin-left:-200px;
+
+}
+
+nav .logo-image {
+  max-width: 5rem;
+  height: auto;
 }
 
 .fa-user {
