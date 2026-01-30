@@ -22,10 +22,10 @@ const Home = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
-  
+
   return (
     <div>
-      <nav>
+      <nav className="home-nav">
         <img
           className="logo-image"
           src="/assets/apsit.png"

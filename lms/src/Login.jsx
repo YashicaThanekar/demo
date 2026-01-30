@@ -4,25 +4,7 @@ import "./Login.css";
 
 const Navbar = () => {
   return (
-    // <nav className="navbar-style">
-    //   <div className="navbar-content">
-    //     <img
-    //       src="/assets/apsit.png"
-    //       alt="College Logo"
-    //       className="navbar-logo"
-    //     />
-    //     <div className="navbar-text">
-    //       <h1>
-    //         Parshvanath Charitable Trust's A. P. Shah Institute of Technology
-    //       </h1>
-    //       <h5>
-    //         (Religious Jain Minority Institute, Affiliated to University of
-    //         Mumbai, Approved by AICTE Delhi & DTE)
-    //       </h5>
-    //     </div>
-    //   </div>
-    // </nav>
-    <nav>
+    <nav className="navbar">
       <img className="logo-image" src="/assets/apsit.png" alt="Library Logo" />
       <h1>PCT's A. P. Shah Institute of Technology - Library</h1>
     </nav>
@@ -57,11 +39,14 @@ const Login = () => {
 
       if (data.success) {
         // Store user info in localStorage if needed
-        localStorage.setItem("user", JSON.stringify({
-          moodle_id: moodleId,
-          role: data.role
-        }));
-        
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            moodle_id: moodleId,
+            role: data.role,
+          }),
+        );
+
         // Navigate to home page
         navigate("/home");
       } else {
@@ -86,7 +71,13 @@ const Login = () => {
             </h3>
 
             {error && (
-              <div style={{ color: "red", marginBottom: "10px", textAlign: "center" }}>
+              <div
+                style={{
+                  color: "red",
+                  marginBottom: "10px",
+                  textAlign: "center",
+                }}
+              >
                 {error}
               </div>
             )}
@@ -95,12 +86,12 @@ const Login = () => {
               <label>
                 <i className="fa-solid fa-user-graduate"></i> Moodle ID
               </label>
-              <input 
-                type="text" 
-                placeholder="Enter Moodle ID" 
+              <input
+                type="text"
+                placeholder="Enter Moodle ID"
                 value={moodleId}
                 onChange={(e) => setMoodleId(e.target.value)}
-                required 
+                required
               />
             </div>
 
@@ -108,12 +99,12 @@ const Login = () => {
               <label>
                 <i className="fa-solid fa-lock"></i> Password
               </label>
-              <input 
-                type="password" 
-                placeholder="Password" 
+              <input
+                type="password"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required 
+                required
               />
             </div>
 
