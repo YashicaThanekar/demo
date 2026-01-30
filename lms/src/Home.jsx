@@ -22,7 +22,7 @@ const Home = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
-
+  
   return (
     <div>
       <nav>
