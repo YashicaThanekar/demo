@@ -1,36 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar-style">
-      <div className="navbar-content">
-        <img
-          src="/assets/apsit.png"
-          alt="College Logo"
-          className="navbar-logo"
-        />
-        <div className="navbar-text">
-          <h1>
-            Parshvanath Charitable Trust's A. P. Shah Institute of Technology
-          </h1>
-          <h5>
-            (Religious Jain Minority Institute, Affiliated to University of
-            Mumbai, Approved by AICTE Delhi & DTE)
-          </h5>
-        </div>
-      </div>
+    // <nav className="navbar-style">
+    //   <div className="navbar-content">
+    //     <img
+    //       src="/assets/apsit.png"
+    //       alt="College Logo"
+    //       className="navbar-logo"
+    //     />
+    //     <div className="navbar-text">
+    //       <h1>
+    //         Parshvanath Charitable Trust's A. P. Shah Institute of Technology
+    //       </h1>
+    //       <h5>
+    //         (Religious Jain Minority Institute, Affiliated to University of
+    //         Mumbai, Approved by AICTE Delhi & DTE)
+    //       </h5>
+    //     </div>
+    //   </div>
+    // </nav>
+    <nav>
+      <img className="logo-image" src="/assets/apsit.png" alt="Library Logo" />
+      <h1>PCT's A. P. Shah Institute of Technology - Library</h1>
     </nav>
   );
 };
 
 const Login = () => {
   const navigate = useNavigate();
+  const [moodleId, setMoodleId] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    navigate("/home");
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          moodle_id: moodleId,
+          password: password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Store user info in localStorage if needed
+        localStorage.setItem("user", JSON.stringify({
+          moodle_id: moodleId,
+          role: data.role
+        }));
+        
+        // Navigate to home page
+        navigate("/home");
+      } else {
+        setError(data.message || "Login failed");
+      }
+    } catch (err) {
+      setError("Unable to connect to server. Please try again.");
+      console.error("Login error:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -40,25 +82,43 @@ const Login = () => {
         <div className="login-container">
           <form onSubmit={handleLogin}>
             <h3>
-              <i class="fa-solid fa-user"></i> Login
+              <i className="fa-solid fa-user"></i> Login
             </h3>
+
+            {error && (
+              <div style={{ color: "red", marginBottom: "10px", textAlign: "center" }}>
+                {error}
+              </div>
+            )}
 
             <div className="input-group">
               <label>
                 <i className="fa-solid fa-user-graduate"></i> Moodle ID
               </label>
-              <input type="number" placeholder="Enter Moodle ID" required />
+              <input 
+                type="text" 
+                placeholder="Enter Moodle ID" 
+                value={moodleId}
+                onChange={(e) => setMoodleId(e.target.value)}
+                required 
+              />
             </div>
 
             <div className="input-group">
               <label>
                 <i className="fa-solid fa-lock"></i> Password
               </label>
-              <input type="password" placeholder="Password" required />
+              <input 
+                type="password" 
+                placeholder="Password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required 
+              />
             </div>
 
-            <button className="login-button" type="submit">
-              Login
+            <button className="login-button" type="submit" disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
         </div>

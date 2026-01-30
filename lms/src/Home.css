@@ -25,10 +25,13 @@ nav{
     top: 0;
     left: 0;
     z-index: 1000;
+    justify-content: space-between;
 }
 
 nav h1{
-  margin-right:50rem;
+  flex: 1;
+  text-align: center;
+  margin: 0 2rem;
 }
 
 nav img{
@@ -38,40 +41,88 @@ nav img{
     padding:0 0 0 0 ;
 }
 
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 3rem;
+}
+
+.user-greeting {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #FFFBF2;
+}
+
+.logout-button {
+    background-color: #d4b06f;
+    color: #2c2c2c;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+    background-color: #FFFBF2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logout-button i {
+    font-size: 1rem;
+}
+
 .search-bar{
-    display:flex;
-    justify-self: center;
-    min-width: 50%;
-    margin: 1.5rem 0;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0;
     border-radius: 20px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     height: 2.5rem;
     border: 2px solid #d4b06f;
-  background-color: #FFFBF2;
-  padding: 2px 0px 2px 15px;
-  font-size: 20px;
-
+    background-color: #FFFBF2;
+    padding: 2px 0px 2px 15px;
+    font-size: 18px;
+    border-right: none;
 }
 
 .search-bar:focus-within {
     border: 2px solid #d4b06f;
+    border-right: none;
 }
 
 input::placeholder {
-  color: #d4b06f;   /* your desired color */
+  color: #d4b06f;
 }
 
 
 .filter-button{
-     border: 2px solid #d4b06f;
-  background-color: #FFFBF2;
-    height:2.97rem;
+    border: 2px solid #d4b06f;
+    background-color: #FFFBF2;
+    height: 2.5rem;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    margin: 1.5rem 0;
+    margin: 0;
     border-left: none;
-    cursor:pointer;
+    cursor: pointer;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: #d4b06f;
 }
 
 .filter-button img{
@@ -81,12 +132,18 @@ input::placeholder {
 
 input.search-bar:focus, input.search-bar:focus-visible {
     border: 2px solid #d4b06f;
+    border-right: none;
     outline: none;
 }
 
 .search-filter-container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 
